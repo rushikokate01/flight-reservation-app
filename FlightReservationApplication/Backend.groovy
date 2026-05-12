@@ -5,7 +5,7 @@ pipeline {
         jdk 'JDK21'
         maven 'maven'
     }
-    
+
     stages {
         stage('Code-pull') {
             steps {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('QA-Test') {
             steps {
-                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar-token') {
+                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar token') {
                     sh '''
                         cd FlightReservationApplication
                         mvn sonar:sonar -Dsonar.projectKey=flight-reservation-backend 
