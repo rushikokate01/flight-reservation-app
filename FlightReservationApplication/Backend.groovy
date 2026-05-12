@@ -1,5 +1,11 @@
 pipeline {
     agent any
+
+    tools{
+        jdk 'JDK21'
+        maven 'maven'
+    }
+    
     stages {
         stage('Code-pull') {
             steps {
